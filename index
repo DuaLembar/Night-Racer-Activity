@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Night Racer Club — Galeri Aktivitas</title>
+  <style>
+    :root{
+      --bg: #0b0b0c; 
+      --card: #121216;
+      --text: #f5f7fb;
+      --muted: #a8adbb;
+      --accent: #e11d48;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, sans-serif;
+      background: radial-gradient(1200px 800px at 10% -10%, #161623 0%, transparent 60%), var(--bg);
+      color:var(--text);
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+    }
+    .wrap{max-width:960px;margin:48px auto;padding:0 16px}
+
+    /* Header */
+    .club-name{
+      font-size: clamp(28px, 4vw, 40px);
+      font-weight: 800; letter-spacing: 0.2px;
+      text-transform: uppercase;
+      display:block;
+      text-align:center;
+    }
+    .club-name .accent{color:var(--accent)}
+
+    /* Spacing for the two blank lines requested */
+    .spacer{height: clamp(16px, 3vh, 28px)}
+
+    /* Card */
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.00));
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius: 18px; 
+      padding: 14px; 
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      overflow: hidden;
+    }
+    .item{display:grid; gap:10px}
+
+    /* Text sizes per request */
+    .activity-title{font-size: clamp(18px, 2.6vw, 22px); font-weight:600}
+    .activity-date{font-size: clamp(12px, 1.8vw, 14px); color:var(--muted)}
+
+    /* Image */
+    .photo{
+      width:100%; height:auto; display:block; 
+      border-radius:14px; 
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    /* Grid for multiple activities */
+    .grid{display:grid; gap:18px; grid-template-columns: 1fr}
+    @media (min-width: 720px){ .grid{ grid-template-columns: 1fr 1fr } }
+
+    /* Tiny helper: make images cover fixed height if you want consistent tiles */
+    .photo.fixed{ height: 320px; object-fit: cover; }
+
+    /* Minimal button for download/print if needed */
+    .toolbar{display:flex; gap:10px; justify-content:center; margin: 10px 0 24px}
+    .btn{background:#ffffff10; color:var(--text); border:1px solid #ffffff22; padding:8px 12px; border-radius:12px; font-weight:600; text-decoration:none}
+    .btn:hover{background:#ffffff18}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+
+    <!-- {Nama Club} -->
+    <h1 class="club-name">Night <span class="accent">Racer</span> Club</h1>
+
+    <!-- (garis baru) (garis baru) -->
+    <div class="spacer"></div>
+    <div class="spacer"></div>
+
+    <!-- Konten aktivitas. Duplikasikan .card untuk menambah item baru. -->
+    <section class="grid" aria-label="Galeri Aktivitas">
+
+      <!-- ITEM 1 -->
+      <article class="card item">
+        <header>
+          <!-- {Nama aktivitas} (font medium) -->
+          <div class="activity-title">Night Ride — Sprint Malam</div>
+          <!-- {tanggal aktivitas} (font small) -->
+          <div class="activity-date">16 Agustus 2025</div>
+        </header>
+        <!-- {Gambar aktivitas} -->
+        <img class="photo" src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1600&auto=format&fit=crop" alt="Night Ride — Sprint Malam" />
+      </article>
+
+      <!-- ITEM 2 -->
+      <article class="card item">
+        <header>
+          <div class="activity-title">Meet &amp; Shoot — Parkiran Timur</div>
+          <div class="activity-date">10 Agustus 2025</div>
+        </header>
+        <img class="photo" src="https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?q=80&w=1600&auto=format&fit=crop" alt="Meet & Shoot — Parkiran Timur" />
+      </article>
+
+      <!-- ITEM 3 -->
+      <article class="card item">
+        <header>
+          <div class="activity-title">Time Attack — Sirkuit LS</div>
+          <div class="activity-date">03 Agustus 2025</div>
+        </header>
+        <img class="photo" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop" alt="Time Attack — Sirkuit LS" />
+      </article>
+
+    </section>
+
+    <div class="toolbar">
+      <a class="btn" href="#" onclick="window.print(); return false;">Cetak / Simpan PDF</a>
+    </div>
+
+  </main>
+</body>
+</html>
