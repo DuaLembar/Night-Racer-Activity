@@ -5,36 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Night Racer Club — Galeri Aktivitas</title>
   <style>
- .photo {
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.08);
- }
+    /* Variabel warna */
+    :root {
+      --bg: #0b0b0c;       /* background gelap utama */
+      --card: #121216;     /* warna card */
+      --text: #f5f7fb;     /* warna teks utama */
+      --muted: #a8adbb;    /* teks tanggal kecil */
+      --accent: #e11d48;   /* warna aksen club */
+    }
 
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, sans-serif;
-  background: radial-gradient(1200px 800px at 10% -10%, #161623 0%, transparent 60%), var(--bg);
-  color: var(--text);
-  line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, sans-serif;
+      background: radial-gradient(1200px 800px at 10% -10%, #161623 0%, transparent 60%), var(--bg);
+      color: var(--text);
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
     .wrap{max-width:960px;margin:48px auto;padding:0 16px}
 
     /* Header */
     .club-name{
       font-size: clamp(28px, 4vw, 40px);
-      font-weight: 800; letter-spacing: 0.2px;
+      font-weight: 800; 
+      letter-spacing: 0.2px;
       text-transform: uppercase;
       display:block;
       text-align:center;
     }
     .club-name .accent{color:var(--accent)}
 
-    /* Spacing for the two blank lines requested */
     .spacer{height: clamp(16px, 3vh, 28px)}
 
     /* Card */
@@ -48,53 +52,57 @@ body {
     }
     .item{display:grid; gap:10px}
 
-    /* Text sizes per request */
+    /* Text sizes */
     .activity-title{font-size: clamp(18px, 2.6vw, 22px); font-weight:600}
     .activity-date{font-size: clamp(12px, 1.8vw, 14px); color:var(--muted)}
 
-    /* Image */
-    .photo{
-      width:100%; height:auto; display:block; 
-      border-radius:14px; 
-      border:1px solid rgba(255,255,255,0.08);
+    /* Foto 3:2 */
+    .photo {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
-    /* Grid for multiple activities */
+    /* Grid untuk beberapa aktivitas */
     .grid{display:grid; gap:18px; grid-template-columns: 1fr}
     @media (min-width: 720px){ .grid{ grid-template-columns: 1fr 1fr } }
 
-    /* Tiny helper: make images cover fixed height if you want consistent tiles */
-    .photo.fixed{ height: 320px; object-fit: cover; }
-
-    /* Minimal button for download/print if needed */
+    /* Toolbar cetak */
     .toolbar{display:flex; gap:10px; justify-content:center; margin: 10px 0 24px}
-    .btn{background:#ffffff10; color:var(--text); border:1px solid #ffffff22; padding:8px 12px; border-radius:12px; font-weight:600; text-decoration:none}
+    .btn{
+      background:#ffffff10;
+      color:var(--text);
+      border:1px solid #ffffff22;
+      padding:8px 12px;
+      border-radius:12px;
+      font-weight:600;
+      text-decoration:none
+    }
     .btn:hover{background:#ffffff18}
   </style>
 </head>
 <body>
   <main class="wrap">
 
-    <!-- {Nama Club} -->
+    <!-- Nama Club -->
     <h1 class="club-name">Night <span class="accent">Racer</span> Club</h1>
 
-    <!-- (garis baru) (garis baru) -->
+    <!-- Dua garis baru -->
     <div class="spacer"></div>
     <div class="spacer"></div>
 
-    <!-- Konten aktivitas. Duplikasikan .card untuk menambah item baru. -->
+    <!-- Konten aktivitas -->
     <section class="grid" aria-label="Galeri Aktivitas">
 
       <!-- ITEM 1 -->
       <article class="card item">
         <header>
-          <!-- {Nama aktivitas} (font medium) -->
-          <div class="activity-title">Club House - Dilimore</div>
-          <!-- {tanggal aktivitas} (font small) -->
+          <div class="activity-title">Club House Night Racer — Dilimore</div>
           <div class="activity-date">05 Agustus 2025</div>
         </header>
-        <!-- {Gambar aktivitas} -->
-        <img class="photo" src="https://files.catbox.moe/h2wqv4.jpg" alt="Pengenalan Base Baru Kepada Anggota" />
+        <img class="photo" src="https://files.catbox.moe/h2wqv4.jpg" alt=Perkenalan Base Baru Di Dilimore" />
       </article>
 
       <!-- ITEM 2 -->
@@ -123,4 +131,4 @@ body {
 
   </main>
 </body>
-</html>
+  </html>
