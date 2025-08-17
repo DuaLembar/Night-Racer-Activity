@@ -32,23 +32,15 @@ body {
 
 /* Header */
 .club-name {
-  font-size: clamp(42px, 6vw, 60px); /* diperbesar lagi */
+  font-size: clamp(46px, 6vw, 66px); /* diperbesar lagi */
   font-weight: 800;
   letter-spacing: 0.2px;
   text-transform: uppercase;
   display:block;
   text-align:center;
+  margin-bottom: 32px; /* space / garis baru */
 }
 .club-name .accent { color: var(--accent); }
-
-/* Garis bawah judul */
-.club-separator {
-  width: 80px;
-  height: 3px;
-  background-color: var(--accent);
-  margin: 8px auto 32px auto;
-  border-radius: 2px;
-}
 
 /* Foto Biasa */
 .activity {
@@ -126,7 +118,6 @@ body {
 <body>
   <div class="wrap">
     <h1 class="club-name">Night <span class="accent">Racer</span> Club</h1>
-    <div class="club-separator"></div> <!-- garis baru -->
 
     <!-- FOTO BIASA -->
     <div class="activity">
