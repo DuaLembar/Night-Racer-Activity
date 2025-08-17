@@ -67,7 +67,7 @@ body {
   border: 1px solid rgba(255,255,255,0.08);
 }
 
-/* Tombol Discord di pojok activity pertama - FIX SEJAJAR */
+/* Tombol Discord di pojok activity pertama - FIX SEJAJAR + JARAK VERTIKAL */
 .activity:first-of-type .btn.discord {
   display: inline-block;
   font-size: 14px;
@@ -78,8 +78,10 @@ body {
   color: white;
   text-decoration: none;
   transition: background 0.2s;
-  margin-left: 12px; /* jarak dari judul */
+  margin-left: 12px; /* jarak horizontal dari teks tetap */
   vertical-align: middle; /* sejajar dengan teks */
+  margin-top: 6px; /* jarak atas bawah */
+  margin-bottom: 6px;
 }
 .activity:first-of-type .btn.discord:hover {
   background: #4752C4;
