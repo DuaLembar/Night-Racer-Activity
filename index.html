@@ -5,94 +5,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Night Racer Club — Galeri Aktivitas</title>
   <style>
-    /* Variabel warna */
-    :root {
-      --bg: #0b0b0c;       /* background gelap utama */
-      --card: #121216;     /* warna card */
-      --text: #f5f7fb;     /* warna teks utama */
-      --muted: #a8adbb;    /* teks tanggal kecil */
-      --accent: #ffffff;   /* warna aksen club */
-    }
+:root {
+  --bg: #0b0b0c;
+  --card: #121216;
+  --text: #f5f7fb;
+  --muted: #a8adbb;
+  --accent: #ffffff;
+}
 
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, sans-serif;
-      background: radial-gradient(1200px 800px at 10% -10%, #161623 0%, transparent 60%), var(--bg);
-      color: var(--text);
-      line-height:1.55;
-      -webkit-font-smoothing:antialiased;
-      -moz-osx-font-smoothing:grayscale;
-    }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, sans-serif;
+  background: radial-gradient(1200px 800px at 10% -10%, #161623 0%, transparent 60%), var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-    .wrap{max-width:960px;margin:48px auto;padding:0 16px}
+.wrap {
+  max-width:960px;
+  margin:48px auto;
+  padding:0 16px;
+}
 
-    /* Header */
-    .club-name{
-      font-size: clamp(28px, 4vw, 40px);
-      font-weight: 800; 
-      letter-spacing: 0.2px;
-      text-transform: uppercase;
-      display:block;
-      text-align:center;
-    }
-    .club-name .accent{color:var(--accent)}
+/* Header */
+.club-name {
+  font-size: clamp(28px, 4vw, 40px);
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  display:block;
+  text-align:center;
+}
+.club-name .accent { color: var(--accent); }
 
-    .spacer{height: clamp(16px, 3vh, 28px)}
+/* Foto 3:2 */
+.photo {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 32px;
+}
 
-    /* Card */
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.00));
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius: 18px; 
-      padding: 14px; 
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-      overflow: hidden;
-    }
-    .item{display:grid; gap:10px}
+/* Toolbar */
+.toolbar {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 32px;
+}
+.btn {
+  background: var(--accent);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .2s ease;
+}
+.btn:hover {
+  background: #be123c;
+}
 
-    /* Text sizes */
-    .activity-title{font-size: clamp(18px, 2.6vw, 22px); font-weight:600}
-    .activity-date{font-size: clamp(12px, 1.8vw, 14px); color:var(--muted)}
-
-    /* Foto 3:2 */
-    .photo {
-      width: 100%;
-      aspect-ratio: 3 / 2;
-      object-fit: cover;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.08);
-    }
-
-    /* Grid untuk beberapa aktivitas */
-    .grid{display:grid; gap:18px; grid-template-columns: 1fr}
-    @media (min-width: 720px){ .grid{ grid-template-columns: 1fr 1fr } }
-
-    /* Toolbar cetak */
-    .toolbar{display:flex; gap:10px; justify-content:center; margin: 10px 0 24px}
-    .btn{
-      background:#ffffff10;
-      color:var(--text);
-      border:1px solid #ffffff22;
-      padding:8px 12px;
-      border-radius:12px;
-      font-weight:600;
-      text-decoration:none
-    }
-    .btn:hover{background:#ffffff18}
-  </style>
-</head>
-<body>
-  <main class="wrap">
-    
-    .btn.discord {
+/* Button Discord */
+.btn.discord {
   background: #5865F2;   /* warna biru Discord */
   border-color: #4752C4;
 }
 .btn.discord:hover {
   background: #4752C4;
 }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1 class="club-name">Night <span class="accent">Racer</span> Club</h1>
+
+    <div class="activity">
+      <h2 style="font-size:20px;font-weight:600;margin-bottom:6px;">City Night Run <span style="font-size:14px;color:var(--muted);font-weight:400;">12 Agustus 2025</span></h2>
+      <img src="foto1.jpg" alt="City Night Run" class="photo" />
+    </div>
+
+    <div class="activity">
+      <h2 style="font-size:20px;font-weight:600;margin-bottom:6px;">Highway Sprint <span style="font-size:14px;color:var(--muted);font-weight:400;">5 Agustus 2025</span></h2>
+      <img src="foto2.jpg" alt="Highway Sprint" class="photo" />
+    </div>
+
+    <div class="toolbar">
+      <a class="btn" href="#">Cetak / Simpan PDF</a>
+      <a class="btn discord" href="https://discord.gg/D8wGMYPQkg" target="_blank">Join Discord</a>
+    </div>
+  </div>
+</body>
+</html>
+  <main class="wrap">
 
     <!-- Nama Club -->
     <h1 class="club-name">Night <span class="accent">Racer</span> Club</h1>
