@@ -27,11 +27,12 @@ body {
   max-width:960px;
   margin:48px auto;
   padding:0 16px;
+  text-align: center;
 }
 
 /* Header */
 .club-name {
-  font-size: clamp(28px, 4vw, 40px);
+  font-size: clamp(36px, 5vw, 50px); /* diperbesar sedikit */
   font-weight: 800;
   letter-spacing: 0.2px;
   text-transform: uppercase;
@@ -43,6 +44,7 @@ body {
 /* Foto Biasa */
 .activity {
   margin-bottom: 32px;
+  position: relative; /* biar tombol Discord bisa absolute */
 }
 .activity-title {
   font-size: 20px;
@@ -63,33 +65,21 @@ body {
   border: 1px solid rgba(255,255,255,0.08);
 }
 
-/* Toolbar */
-.toolbar {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  margin: 32px 0;
-}
-.btn {
-  background: var(--accent);
-  color: white;
-  padding: 10px 18px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.1);
-  font-weight: 600;
-  text-decoration: none;
-  transition: background .2s ease;
-}
-.btn:hover {
-  background: #be123c;
-}
-
-/* Button Discord */
-.btn.discord {
+/* Tombol Discord di pojok activity pertama */
+.activity:first-of-type .btn.discord {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 14px;
+  padding: 6px 12px;
   background: #5865F2;
-  border-color: #4752C4;
+  border: 1px solid #4752C4;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  transition: background 0.2s;
 }
-.btn.discord:hover {
+.activity:first-of-type .btn.discord:hover {
   background: #4752C4;
 }
 
@@ -130,6 +120,8 @@ body {
     <div class="activity">
       <div class="activity-title">Parking in Front of Club House</div>
       <div class="activity-date">10 Agustus 2025</div>
+      <!-- Tombol Discord di pojok kanan atas -->
+      <a class="btn discord" href="https://discord.gg/D8wGMYPQkg" target="_blank">Join Discord</a>
       <img src="https://files.catbox.moe/h2wqv4.jpg" alt="City Night Run" class="photo" />
     </div>
 
@@ -143,11 +135,6 @@ body {
       <div class="activity-title">Sprint Race — Las Venturas</div>
       <div class="activity-date">5 Juli 2025</div>
       <img src="https://files.catbox.moe/nnogwi.jpg" alt="Sprint Race" class="photo" />
-    </div>
-
-    <!-- TOMBOL DISCORD -->
-    <div class="toolbar">
-      <a class="btn discord" href="https://discord.gg/D8wGMYPQkg" target="_blank">Join Discord</a>
     </div>
 
     <!-- SLIDESHOW FOTO ANGGOTA -->
@@ -164,21 +151,6 @@ body {
       <div class="slide">
         <img src="https://files.catbox.moe/nnogwi.jpg" alt="Member 3" />
         <div class="slide-caption">Anonymous</div>
-        <style>
-/* Tambahan baru */
-.activity {
-  position: relative; /* biar anak bisa di-absolute */
-}
-
-.btn.discord {
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 0;
-  font-size: 13px;
-  padding: 6px 12px;
-}
-        </style>
       </div>
     </div>
   </div>
