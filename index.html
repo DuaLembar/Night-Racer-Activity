@@ -19,125 +19,164 @@ body {
   background: radial-gradient(1200px 800px at 10% -10%, #161623 0%, transparent 60%), var(--bg);
   color: var(--text);
   line-height: 1.55;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 .wrap {
-  max-width:960px;
-  margin:48px auto;
-  padding:0 16px;
+  max-width: 960px;
+  margin: 48px auto;
+  padding: 0 16px;
+  text-align: center;
 }
 
 /* Header */
 .club-name {
   font-size: clamp(28px, 4vw, 40px);
   font-weight: 800;
-  letter-spacing: 0.2px;
   text-transform: uppercase;
-  display:block;
-  text-align:center;
-  margin-bottom: 32px;
 }
 .club-name .accent { color: var(--accent); }
 
-/* Foto 3:2 */
-.photo {
+/* Slideshow */
+.slideshow-container {
+  position: relative;
+  max-width: 100%;
+  margin: 40px auto;
+}
+
+.slide {
+  display: none;
+}
+
+.slide img {
   width: 100%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.08);
-  margin-bottom: 32px;
 }
 
-/* Toolbar */
-.toolbar {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  margin-top: 32px;
-  margin-bottom: 32px;
+.caption {
+  margin-top: 10px;
+  font-size: 16px;
+  color: var(--muted);
 }
-.btn {
-  background: var(--accent);
+
+/* Tombol navigasi */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  width: auto;
+  margin-top: -22px;
+  padding: 12px;
   color: white;
-  padding: 10px 18px;
-  border-radius: 12px;
-  border: 1px solid rgba(255,255,255,0.1);
-  font-weight: 600;
-  text-decoration: none;
-  transition: background .2s ease;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 6px;
+  user-select: none;
+  background: rgba(0,0,0,0.4);
+  transition: 0.3s;
 }
-.btn:hover {
-  background: #be123c;
+.next { right: 0; }
+.prev:hover, .next:hover { background: rgba(0,0,0,0.7); }
+
+/* Dots indikator */
+.dots {
+  text-align: center;
+  margin-top: 14px;
+}
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+.active, .dot:hover {
+  background-color: #717171;
 }
 
 /* Button Discord */
 .btn.discord {
-  background: #5865F2;   /* warna biru Discord */
-  border-color: #4752C4;
+  display: inline-block;
+  margin-top: 30px;
+  background: #5865F2;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background .2s ease;
 }
-.btn.discord:hover {
-  background: #4752C4;
-}
+.btn.discord:hover { background: #4752C4; }
   </style>
 </head>
 <body>
-  <main class="wrap">
-
-    <!-- Nama Club -->
+  <div class="wrap">
     <h1 class="club-name">Night <span class="accent">Racer</span> Club</h1>
 
-    <!-- Galeri Aktivitas -->
-    <section class="grid" aria-label="Galeri Aktivitas">
+    <!-- SLIDESHOW -->
+    <div class="slideshow-container">
 
-      <!-- ITEM 1 -->
-      <article class="card item">
-        <header>
-          <div class="activity-title">Club House Night Racer — Dilimore</div>
-          <div class="activity-date">10 Agustus 2025</div>
-        </header>
-        <img class="photo" src="https://files.catbox.moe/h2wqv4.jpg" alt="Perkenalan Base Baru Di Dilimore" />
-      </article>
+      <div class="slide">
+        <img src="https://files.catbox.moe/h2wqv4.jpg" alt="SS Anggota 1">
+        <div class="caption">Screenshot dari Anggota 1</div>
+      </div>
 
-      <!-- ITEM 2 -->
-      <article class="card item">
-        <header>
-          <div class="activity-title">Meet &amp; Berkumpul di Halaman Depan Base</div>
-          <div class="activity-date">10 Agustus 2025</div>
-        </header>
-        <img class="photo" src="https://files.catbox.moe/2kyd2t.jpg" alt="Base Dilimore Halaman Depan" />
-      </article>
+      <div class="slide">
+        <img src="https://files.catbox.moe/2kyd2t.jpg" alt="SS Anggota 2">
+        <div class="caption">Screenshot dari Anggota 2</div>
+      </div>
 
-      <!-- ITEM 3 -->
-      <article class="card item">
-        <header>
-          <div class="activity-title">Sprint Race — Las Venturas</div>
-          <div class="activity-date">05 Juli 2025</div>
-        </header>
-        <img class="photo" src="https://files.catbox.moe/nnogwi.jpg" alt="Sprint — Las Venturas" />
-      </article>
-      
-      <!-- ITEM 4 -->
-      <article class="card item">
-        <header>
-          <div class="activity-title">Unknown</div>
-          <div class="activity-date">05 Juli 2025</div>
-        </header>
-        <img class="photo" src="Isi Link Foto" alt="Deskripsi" />
-      </article>
-      
-      <!-- ITEM 5 -->
-      <article class="card item">
-        <header>
-          <div class="activity-title">Unknown</div>
-          <div class="activity-date">05 Juli 2025</div>
-        </header>
-        <img class="photo" src="Isi Link Foto" alt="Deskripsi" />
-      </article>
+      <div class="slide">
+        <img src="https://files.catbox.moe/nnogwi.jpg" alt="SS Anggota 3">
+        <div class="caption">Screenshot dari Anggota 3</div>
+      </div>
 
-    </section>
-  </main>
+      <!-- Tombol navigasi -->
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+    </div>
+
+    <!-- Dots indikator -->
+    <div class="dots">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <!-- Tombol Discord -->
+    <a class="btn discord" href="https://discord.gg/D8wGMYPQkg" target="_blank">Join Discord</a>
+  </div>
+
+  <script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("slide");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+  </script>
 </body>
 </html>
