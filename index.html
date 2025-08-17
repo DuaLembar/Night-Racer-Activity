@@ -32,7 +32,7 @@ body {
 
 /* Header */
 .club-name {
-  font-size: clamp(36px, 5vw, 50px); /* diperbesar sedikit */
+  font-size: clamp(36px, 5vw, 50px);
   font-weight: 800;
   letter-spacing: 0.2px;
   text-transform: uppercase;
@@ -44,18 +44,20 @@ body {
 /* Foto Biasa */
 .activity {
   margin-bottom: 32px;
-  position: relative; /* biar tombol Discord bisa absolute */
+  position: relative; /* untuk tombol Discord */
 }
 .activity-title {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 6px;
+  text-align: left; /* tetap di kiri */
 }
 .activity-date {
   font-size: 14px;
   color: var(--muted);
   font-weight: 400;
   margin-bottom: 6px;
+  text-align: left; /* tetap di kiri */
 }
 .photo {
   width: 100%;
@@ -120,7 +122,6 @@ body {
     <div class="activity">
       <div class="activity-title">Parking in Front of Club House</div>
       <div class="activity-date">10 Agustus 2025</div>
-      <!-- Tombol Discord di pojok kanan atas -->
       <a class="btn discord" href="https://discord.gg/D8wGMYPQkg" target="_blank">Join Discord</a>
       <img src="https://files.catbox.moe/h2wqv4.jpg" alt="City Night Run" class="photo" />
     </div>
@@ -152,7 +153,24 @@ body {
         <img src="https://files.catbox.moe/nnogwi.jpg" alt="Member 3" />
         <div class="slide-caption">Anonymous</div>
       </div>
+      <!-- Tambah slide baru -->
+      <!--
+      <div class="slide">
+        <img src="LINK_FOTO_BARU" alt="Member Baru" />
+        <div class="slide-caption">Nama Member Baru</div>
+      </div>
+      -->
     </div>
+
+    <!-- Tambah foto biasa baru -->
+    <!--
+    <div class="activity">
+      <div class="activity-title">Judul Aktivitas Baru</div>
+      <div class="activity-date">Tanggal Aktivitas</div>
+      <img src="LINK_FOTO_BARU" alt="Deskripsi Foto Baru" class="photo" />
+    </div>
+    -->
+    
   </div>
 </body>
 </html>
