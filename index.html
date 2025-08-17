@@ -1,200 +1,203 @@
-<!DOCTYPE html>  <html lang="id">  
-<head>  
-  <meta charset="utf-8" />  
-  <meta name="viewport" content="width=device-width, initial-scale=1" />  
-  <title>Night Racer Club — Galeri Aktivitas</title>  
-  <style>  
-:root {  
-  --bg: #0b0b0c;  
-  --card: #121216;  
-  --text: #f5f7fb;  
-  --muted: #a8adbb;  
-  --accent: #ffffff;  
-}  body {
-margin: 0;
-font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, sans-serif;
-background: radial-gradient(1200px 800px at 10% -10%, #161623 0%, transparent 60%), var(--bg);
-color: var(--text);
-line-height: 1.55;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Night Racer Club — Galeri Aktivitas</title>
+  <style>
+:root {
+  --bg: #0b0b0c;
+  --card: #121216;
+  --text: #f5f7fb;
+  --muted: #a8adbb;
+  --accent: #ffffff;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, sans-serif;
+  background: radial-gradient(1200px 800px at 10% -10%, #161623 0%, transparent 60%), var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 .wrap {
-max-width:960px;
-margin:48px auto;
-padding:0 16px;
-text-align: center;
+  max-width:960px;
+  margin:48px auto;
+  padding:0 16px;
+  text-align: center;
 }
 
-/* Header /
+/* Header */
 .club-name {
-font-size: clamp(46px, 6vw, 66px); / diperbesar lagi /
-font-weight: 800;
-letter-spacing: 0.2px;
-text-transform: uppercase;
-display:block;
-text-align:center;
-margin-bottom: 32px; / space / garis baru */
+  font-size: clamp(46px, 6vw, 66px); /* diperbesar lagi */
+  font-weight: 800;
+  letter-spacing: 0.2px;
+  text-transform: uppercase;
+  display:block;
+  text-align:center;
+  margin-bottom: 32px; /* space / garis baru */
 }
 .club-name .accent { color: var(--accent); }
 
-/* Foto Biasa /
+/* Foto Biasa */
 .activity {
-margin-bottom: 32px;
-position: relative; / untuk tombol Discord */
+  margin-bottom: 32px;
+  position: relative; /* untuk tombol Discord */
 }
 .activity-title {
-font-size: 20px;
-font-weight: 600;
-margin-bottom: 6px;
-text-align: left;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  text-align: left;
 }
 .activity-date {
-font-size: 14px;
-color: var(--muted);
-font-weight: 400;
-margin-bottom: 6px;
-text-align: left;
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 400;
+  margin-bottom: 6px;
+  text-align: left;
 }
 .photo {
-width: 100%;
-aspect-ratio: 3 / 2;
-object-fit: cover;
-border-radius: 14px;
-border: 1px solid rgba(255,255,255,0.08);
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 /* Tombol Discord di pojok activity pertama */
 .activity:first-of-type .btn.discord {
-position: absolute;
-top: 10px;
-right: 10px;
-font-size: 14px;
-padding: 6px 12px;
-background: #5865F2;
-border: 1px solid #4752C4;
-border-radius: 10px;
-color: white;
-text-decoration: none;
-transition: background 0.2s;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 14px;
+  padding: 6px 12px;
+  background: #5865F2;
+  border: 1px solid #4752C4;
+  border-radius: 10px;
+  color: white;
+  text-decoration: none;
+  transition: background 0.2s;
 }
 .activity:first-of-type .btn.discord:hover {
-background: #4752C4;
+  background: #4752C4;
 }
 
 /* Slideshow */
 .slider {
-display: flex;
-overflow-x: auto;
-scroll-snap-type: x mandatory;
-gap: 16px;
-padding: 10px 0;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 16px;
+  padding: 10px 0;
 }
 .slide {
-flex: 0 0 80%;
-scroll-snap-align: center;
-background: var(--card);
-border-radius: 14px;
-overflow: hidden;
-border: 1px solid rgba(255,255,255,0.08);
+  flex: 0 0 80%;
+  scroll-snap-align: center;
+  background: var(--card);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
 }
 .slide img {
-width: 100%;
-height: 220px;
-object-fit: cover;
-display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
 }
 .slide-caption {
-padding: 10px;
-font-size: 14px;
-text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  text-align: center;
 }
-</style>
+  </style>
 
-</head>  
-<body>  
-  <div class="wrap">  
-    <h1 class="club-name">Night <span class="accent">Racer</span> Club</h1>  <!-- FOTO BIASA -->  
-<div class="activity">  
-  <div class="activity-title">Club House — Dilimore</div>  
-  <div class="activity-date">Los Santos — Dilimore</div>  
-  <a class="btn discord" href="https://discord.gg/D8wGMYPQkg" target="_blank">Join Discord</a>  
-  <img src="https://files.catbox.moe/h2wqv4.jpg" alt="Club House, Turf, Base" class="photo" />  
-</div>  
+</head>
+<body>
+  <div class="wrap">
+    <h1 class="club-name">Night <span class="accent">Racer</span> Club</h1>
 
-<div class="activity">  
-  <div class="activity-title">Club House — Dilimore</div>  
-  <div class="activity-date">Los Santos — Dilimore</div>  
-  <img src="https://files.catbox.moe/2kyd2t.jpg" alt="Club House, Turf, Base" class="photo" />  
-</div>  
+    <!-- FOTO BIASA -->
+    <div class="activity">
+      <div class="activity-title">Club House — Dilimore</div>
+      <div class="activity-date"></div>
+      <a class="btn discord" href="https://discord.gg/D8wGMYPQkg" target="_blank">Join Discord</a>
+      <img src="https://files.catbox.moe/h2wqv4.jpg" alt="Club House, Turf, Base" class="photo" />
+    </div>
 
-<div class="activity">  
-  <div class="activity-title">Sprint Race — Las Venturas</div>  
-  <div class="activity-date">5 Juli 2025</div>  
-  <img src="https://files.catbox.moe/nnogwi.jpg" alt="Sprint Race" class="photo" />  
-</div>  
+    <div class="activity">
+      <div class="activity-title">Club House — Dilimore</div>
+      <div class="activity-date"></div>
+      <img src="https://files.catbox.moe/2kyd2t.jpg" alt="Club House, Turf, Base" class="photo" />
+    </div>
 
-<div class="activity">  
-  <div class="activity-title">Night Racer Event — Night Endurance Cup(NEC)</div>  
-  <div class="activity-date">7 July 2025</div>  
-  <img src="https://files.catbox.moe/sn9chf.jpg" alt="Night Endurance Cup" class="photo" />  
-</div>  
+    <div class="activity">
+      <div class="activity-title">Sprint Race — Las Venturas</div>
+      <div class="activity-date">5 Juli 2025</div>
+      <img src="https://files.catbox.moe/nnogwi.jpg" alt="Sprint Race" class="photo" />
+    </div>
 
-<div class="activity">  
-  <div class="activity-title">Sprint Race - The Farm</div>  
-  <div class="activity-date">19 Juli 2025</div>  
-  <img src="https://files.catbox.moe/kk6kxb.jpg" alt="Sprint Race The Farm" class="photo" />  
-</div>  
+    <div class="activity">
+      <div class="activity-title">Night Racer Event — Night Endurance Cup(NEC)</div>
+      <div class="activity-date">7 July 2025</div>
+      <img src="https://files.catbox.moe/sn9chf.jpg" alt="Night Endurance Cup" class="photo" />
+    </div>
 
-<div class="activity">  
-  <div class="activity-title">Sprint Race — Las Venturas To Los Santos</div>  
-  <div class="activity-date">27 Juli 2025</div>  
-  <img src="https://files.catbox.moe/652uqj.jpg" alt="Sprint Race" class="photo" />  
-</div>  
+    <div class="activity">
+      <div class="activity-title">Sprint Race - The Farm</div>
+      <div class="activity-date">19 Juli 2025</div>
+      <img src="https://files.catbox.moe/kk6kxb.jpg" alt="Sprint Race The Farm" class="photo" />
+    </div>
 
-<div class="activity">  
-  <div class="activity-title">Rally - Panopticon</div>  
-  <div class="activity-date">7 Agustus 2025</div>  
-  <img src="https://files.catbox.moe/8zvtam.jpg" alt="Rally Race Panopticon" class="photo" />  
-</div>  
+    <div class="activity">
+      <div class="activity-title">Sprint Race — Las Venturas To Los Santos</div>
+      <div class="activity-date">27 Juli 2025</div>
+      <img src="https://files.catbox.moe/652uqj.jpg" alt="Sprint Race" class="photo" />
+    </div>
 
-<!-- SLIDESHOW FOTO ANGGOTA -->  
-<h2 style="text-align:center;margin:32px 0 16px;">Member Gallery</h2>  
-<div class="slider">  
-  <div class="slide">  
-    <img src="https://files.catbox.moe/z7l2oc.jpg" alt="Member 1" />  
-    <div class="slide-caption">Kaell Francisco</div>  
-  </div>  
-  <div class="slide">  
-    <img src="https://files.catbox.moe/56upyi.jpg" alt="Member 2" />  
-    <div class="slide-caption">Ryujin Hyungseok</div>  
-  </div>  
-  <div class="slide">  
-    <img src="https://files.catbox.moe/07lgz6.jpg" alt="Member 3" />  
-    <div class="slide-caption">Nicky Assegaf</div>  
-  </div>  
+    <div class="activity">
+      <div class="activity-title">Rally - Panopticon</div>
+      <div class="activity-date">7 Agustus 2025</div>
+      <img src="https://files.catbox.moe/8zvtam.jpg" alt="Rally Race Panopticon" class="photo" />
+    </div>
 
-  <!-- Format -->  
-  <!--  
-  <!-- Tambah slide baru -->  
-  <!--  
-  <div class="slide">  
-    <img src="LINK_FOTO_BARU" alt="Member Baru" />  
-    <div class="slide-caption">Nama Member Baru</div>  
-  </div>  
-  -->  
-</div>  
+    <!-- SLIDESHOW FOTO ANGGOTA -->
+    <h2 style="text-align:center;margin:32px 0 16px;">Member Gallery</h2>
+    <div class="slider">
+      <div class="slide">
+        <img src="https://files.catbox.moe/z7l2oc.jpg" alt="Member 1" />
+        <div class="slide-caption">Kaell Francisco</div>
+      </div>
+      <div class="slide">
+        <img src="https://files.catbox.moe/56upyi.jpg" alt="Member 2" />
+        <div class="slide-caption">Ryujin Hyungseok</div>
+      </div>
+      <div class="slide">
+        <img src="https://files.catbox.moe/07lgz6.jpg" alt="Member 3" />
+        <div class="slide-caption">Nicky Assegaf</div>
+      </div>
 
-<!-- Tambah foto biasa baru -->  
-<!--  
-<div class="activity">  
-  <div class="activity-title">Judul Aktivitas Baru</div>  
-  <div class="activity-date">Tanggal Aktivitas</div>  
-  <img src="LINK_FOTO_BARU" alt="Deskripsi Foto Baru" class="photo" />  
-</div>  
--->
+      <!-- Format -->
+      <!-- Tambah slide baru -->
+      <!--
+      <div class="slide">
+        <img src="LINK_FOTO_BARU" alt="Member Baru" />
+        <div class="slide-caption">Nama Member Baru</div>
+      </div>
+      -->
+    </div>
 
-  </div>  
-</body>  
+    <!-- Tambah foto biasa baru -->
+    <!--
+    <div class="activity">
+      <div class="activity-title">Judul Aktivitas Baru</div>
+      <div class="activity-date">Tanggal Aktivitas</div>
+      <img src="LINK_FOTO_BARU" alt="Deskripsi Foto Baru" class="photo" />
+    </div>
+    -->
+
+  </div>
+</body>
 </html>
