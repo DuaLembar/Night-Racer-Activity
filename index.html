@@ -32,7 +32,7 @@ body {
 
 /* Header */
 .club-name {
-  font-size: clamp(36px, 5vw, 50px);
+  font-size: clamp(42px, 6vw, 60px); /* diperbesar lagi */
   font-weight: 800;
   letter-spacing: 0.2px;
   text-transform: uppercase;
@@ -40,6 +40,15 @@ body {
   text-align:center;
 }
 .club-name .accent { color: var(--accent); }
+
+/* Garis bawah judul */
+.club-separator {
+  width: 80px;
+  height: 3px;
+  background-color: var(--accent);
+  margin: 8px auto 32px auto;
+  border-radius: 2px;
+}
 
 /* Foto Biasa */
 .activity {
@@ -50,14 +59,14 @@ body {
   font-size: 20px;
   font-weight: 600;
   margin-bottom: 6px;
-  text-align: left; /* tetap di kiri */
+  text-align: left;
 }
 .activity-date {
   font-size: 14px;
   color: var(--muted);
   font-weight: 400;
   margin-bottom: 6px;
-  text-align: left; /* tetap di kiri */
+  text-align: left;
 }
 .photo {
   width: 100%;
@@ -117,6 +126,7 @@ body {
 <body>
   <div class="wrap">
     <h1 class="club-name">Night <span class="accent">Racer</span> Club</h1>
+    <div class="club-separator"></div> <!-- garis baru -->
 
     <!-- FOTO BIASA -->
     <div class="activity">
@@ -170,7 +180,7 @@ body {
       <img src="LINK_FOTO_BARU" alt="Deskripsi Foto Baru" class="photo" />
     </div>
     -->
-    
+
   </div>
 </body>
 </html>
